@@ -1,0 +1,19 @@
+<!-- teacher_dashboard.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Dashboard</title>
+    <!-- Add your beautiful designs/styles here -->
+</head>
+<body>
+    <h1>Welcome, {{ request.user.username }}!</h1>
+    <h2>Assessments:</h2>
+    <ul>
+        {% for assessment in assessments %}
+            <li>{{ assessment.name }}</li>
+        {% empty %}
+            <li>No assessments available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
